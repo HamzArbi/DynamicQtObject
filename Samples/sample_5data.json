@@ -1,0 +1,71 @@
+{
+    "cpp_data": [
+        {
+            "id": "data1",
+            "sec": 10,
+            "min": 15,
+            "max": 20
+        },
+        {
+            "id": "data2",
+            "sec": 2,
+            "min": 0,
+            "max": 100
+        },
+        {
+            "id": "data3",
+            "sec": 1,
+            "min": 100,
+            "max": 999
+        },
+        {
+            "id": "data4",
+            "sec": 5,
+            "min": 1000,
+            "max": 2000
+        },
+        {
+            "id": "data5",
+            "sec": 3,
+            "min": 50,
+            "max": 99
+        }
+    ],
+    "qml_data": [
+        {
+            "id": "box1",
+            "x": 200,
+            "y": 150,
+            "color": "lightblue",
+            "dataSource": "data1"
+        },
+        {
+            "id": "box2",
+            "x": 0,
+            "y": 0,
+            "color": "lightgrey",
+            "dataSource": "data2"
+        },
+        {
+            "id": "box3",
+            "x": 45,
+            "y": 0,
+            "color": "purple",
+            "dataSource": "data3"
+        },
+        {
+            "id": "box4",
+            "x": 200,
+            "y": 400,
+            "color": "pink",
+            "dataSource": "data4"
+        },
+        {
+            "id": "box5",
+            "x": 400,
+            "y": 400,
+            "color": "#43F123",
+            "dataSource": "data5"
+        }
+    ]
+}

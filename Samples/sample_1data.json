@@ -1,0 +1,19 @@
+{
+    "cpp_data": [
+        {
+            "id": "data1",
+            "sec": 2,
+            "min": 100,
+            "max": 800
+        }
+    ],
+    "qml_data": [
+        {
+            "id": "box1",
+            "x": 100,
+            "y": 100,
+            "color": "pink",
+            "dataSource": "data1"
+        }
+    ]
+}

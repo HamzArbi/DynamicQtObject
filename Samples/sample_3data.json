@@ -1,0 +1,45 @@
+{
+    "cpp_data": [
+        {
+            "id": "data1",
+            "sec": 3,
+            "min": 15,
+            "max": 20
+        },
+        {
+            "id": "data2",
+            "sec": 4,
+            "min": 0,
+            "max": 100
+        },
+        {
+            "id": "data3",
+            "sec": 1,
+            "min": 500,
+            "max": 900
+        }
+    ],
+    "qml_data": [
+        {
+            "id": "box1",
+            "x": 0,
+            "y": 0,
+            "color": "lightblue",
+            "dataSource": "data1"
+        },
+        {
+            "id": "box2",
+            "x": 100,
+            "y": 5,
+            "color": "darkgreen",
+            "dataSource": "data2"
+        },
+        {
+            "id": "box3",
+            "x": 30,
+            "y": 100,
+            "color": "lightgrey",
+            "dataSource": "data3"
+        }
+    ]
+}

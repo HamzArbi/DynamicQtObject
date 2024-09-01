@@ -40,7 +40,3 @@ C++ will read all the data and add them in a **QVariantList**, which will make i
 At the end the QML will read the Data through Q_PROPERTY and show it using the Repeater and use the remaining fields such as **x, y, color** to draw Rectangles based on how much data has been inserted on the **.json\* file, and showing the **val\*\* variable that you will notice changing whenever a signal of update is sent.
 
 > Thank you for considering my assignment, looking forward to get updates from you !
-
-```
-
-```

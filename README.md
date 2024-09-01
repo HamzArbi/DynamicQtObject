@@ -13,24 +13,34 @@ Here are the environment i used to make this project run :
 
 The app starts from the _main.cpp_, it will declare a _Singleton_ cpp object that will also be used on the QML side, it will read the file config on startup, the config file is a **\*.json file**, that have this format :
 
-      [
-          {
-          // This part is used in C++
-            "id": "dataId",
-            "sec": 3,
-            "min": 15,
-            "max": 100,
-          // This part is used in QML
-            "x": 200,
-            "y": 150,
-            "color": "lightblue"
-            }
-            , ...
-
-      ] // But both part are read using C++
+```
+{
+    "cpp_data": [
+      {
+        "id": "data1",
+        "sec": 2,
+        "min": 100,
+        "max": 800
+      }
+    ],
+    "qml_data": [
+      {
+        "id": "box1",
+        "x": 100,
+        "y": 100,
+        "color": "pink",
+        "dataSource": "data1"
+      }
+    ]
+} // But both part are read using C++
+```
 
 C++ will read all the data and add them in a **QVariantList**, which will make it easy to be read by QML through Q_PROPERTY, not forgetting that the C++ will instantly create a timer based on the **"sec"** number of seconds so the **"val"** property will be updated based on **min & max** variables and printing the message on console whenever a value is updated.
 
 At the end the QML will read the Data through Q_PROPERTY and show it using the Repeater and use the remaining fields such as **x, y, color** to draw Rectangles based on how much data has been inserted on the **.json\* file, and showing the **val\*\* variable that you will notice changing whenever a signal of update is sent.
 
 > Thank you for considering my assignment, looking forward to get updates from you !
+
+```
+
+```

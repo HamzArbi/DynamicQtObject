@@ -18,7 +18,7 @@ Window {
 			color: modelData.clr
 
 			Text {
-				text: modelData.id
+				text: modelData.val
 				anchors.centerIn: parent
 			}
 		}

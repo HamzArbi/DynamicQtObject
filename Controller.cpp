@@ -39,7 +39,7 @@ void Controller::readFile()
         int _sec = obj["sec"].toInt();
         int _min = obj["min"].toInt();
         int _max = obj["max"].toInt();
-        m_cppData.append(new MyObject(_id, _sec, _min, _max));
+        m_cppData.insert(_id, new MyObject(_id, _sec, _min, _max));
     }
 
     // Extract qml_data
@@ -52,8 +52,19 @@ void Controller::readFile()
         int _y = obj["y"].toInt();
         QColor _color = obj["color"].toString();
         QString _dataSource = obj["dataSource"].toString();
+
+        auto _qmlObject(new MyQmlObject(_id, _x, _y, _color, _dataSource));
+        auto _attachedCppObj(m_cppData.find(_dataSource).value());
+        if (_attachedCppObj) // means if not null
+            // this will attach the CppObject valChanged signal to the
+            // QmlObject onValChanged slot to make it possible to retrieve real time data
+            QObject::connect(_attachedCppObj,
+                             &MyObject::valChanged,
+                             _qmlObject,
+                             &MyQmlObject::onValChanged);
+
         // You may have a warning here about memory leak, after some analysis there's none
-        m_qmlData.append(QVariant::fromValue(new MyQmlObject(_id, _x, _y, _color, _dataSource)));
+        m_qmlData.append(QVariant::fromValue(_qmlObject));
     }
 
     qInfo() << QString("%1 data found !").arg(m_qmlData.size()) << Qt::endl;

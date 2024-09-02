@@ -28,7 +28,7 @@ private:
     explicit Controller(QObject *parent = nullptr);
 
     QVariantList m_qmlData;
-    QList<MyObject *> m_cppData;
+    QMap<QString, MyObject *> m_cppData;
 };
 
 #endif // CONTROLLER_H
